@@ -1,0 +1,107 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+S_0x1009d1de0 .scope module, "TB1" "TB1" 2 3;
+ .timescale -9 -12;
+v0x1009d06d0_0 .var "a", 0 0;
+v0x1009d8120_0 .var "b", 0 0;
+v0x1009d81c0_0 .var "c", 0 0;
+v0x1009d8260_0 .net "w", 0 0, L_0x1009d6470;  1 drivers
+v0x1009d8300_0 .net "x", 0 0, L_0x1009d6710;  1 drivers
+v0x77b0838000_0 .net "y", 0 0, L_0x1009d69b0;  1 drivers
+v0x77b08380a0_0 .net "z", 0 0, L_0x1009d6c90;  1 drivers
+S_0x1009d1f60 .scope module, "dut" "FourWre" 2 8, 3 1 0, S_0x1009d1de0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "w";
+    .port_info 4 /OUTPUT 1 "x";
+    .port_info 5 /OUTPUT 1 "y";
+    .port_info 6 /OUTPUT 1 "z";
+L_0x1009d6470 .functor BUFZ 1, v0x1009d06d0_0, C4<0>, C4<0>, C4<0>;
+L_0x1009d6710 .functor BUFZ 1, v0x1009d8120_0, C4<0>, C4<0>, C4<0>;
+L_0x1009d69b0 .functor BUFZ 1, v0x1009d8120_0, C4<0>, C4<0>, C4<0>;
+L_0x1009d6c90 .functor BUFZ 1, v0x1009d81c0_0, C4<0>, C4<0>, C4<0>;
+v0x1009d6910_0 .net "a", 0 0, v0x1009d06d0_0;  1 drivers
+v0x1009d6670_0 .net "b", 0 0, v0x1009d8120_0;  1 drivers
+v0x1009d63d0_0 .net "c", 0 0, v0x1009d81c0_0;  1 drivers
+v0x1009d0450_0 .net "w", 0 0, L_0x1009d6470;  alias, 1 drivers
+v0x1009d04f0_0 .net "x", 0 0, L_0x1009d6710;  alias, 1 drivers
+v0x1009d0590_0 .net "y", 0 0, L_0x1009d69b0;  alias, 1 drivers
+v0x1009d0630_0 .net "z", 0 0, L_0x1009d6c90;  alias, 1 drivers
+    .scope S_0x1009d1de0;
+T_0 ;
+    %vpi_call 2 19 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1009d1de0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d06d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d8120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1009d81c0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 32 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "TB1.v";
+    "4Wire.v";
