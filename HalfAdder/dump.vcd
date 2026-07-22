@@ -1,5 +1,5 @@
 $date
-	Wed Jul 22 18:50:38 2026
+	Wed Jul 22 18:52:59 2026
 $end
 $version
 	Icarus Verilog
@@ -14,7 +14,7 @@ $var reg 1 # b $end
 $scope module dut $end
 $var wire 1 " a $end
 $var wire 1 # b $end
-$var wire 1 $ out $end
+$var wire 2 $ out [1:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -23,21 +23,22 @@ $dumpall
 $end
 #0
 $dumpvars
-0$
+b0 $
 0#
 0"
 b0 !
 $end
 #10000
 b1 !
-1$
+b1 $
 1"
 #20000
+b1 !
+b1 $
 1#
-1$
 0"
 #30000
-b0 !
-0$
+b10 !
+b10 $
 1"
 #40000

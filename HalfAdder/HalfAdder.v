@@ -1,7 +1,7 @@
 module HalfAdd( 
     input a, 
     input b, 
-    output out );
+    output [1:0] out );
     
     assign out = a + b;
 
