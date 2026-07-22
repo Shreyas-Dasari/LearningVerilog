@@ -1,4 +1,4 @@
-module top_module( 
+module HalfAdd( 
     input a, 
     input b, 
     output out );

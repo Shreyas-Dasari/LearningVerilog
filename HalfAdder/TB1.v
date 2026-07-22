@@ -6,7 +6,7 @@ reg a;
 reg b;
 wire [1:0] out;
 
-top_module dut (
+HalfAdd dut (
     .a(a),
     .b(b),
     .out(out)
