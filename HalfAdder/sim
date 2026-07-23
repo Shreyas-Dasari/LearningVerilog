@@ -7,53 +7,49 @@
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
 :vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
-S_0x102dc53d0 .scope module, "TB1" "TB1" 2 3;
+S_0x10133d560 .scope module, "TB1" "TB1" 2 3;
  .timescale -9 -12;
-v0x102dca310_0 .var "a", 0 0;
-v0x102dca3b0_0 .var "b", 0 0;
-v0x102dca450_0 .net "out", 1 0, L_0x102dca670;  1 drivers
-S_0x102dc4470 .scope module, "dut" "HalfAdd" 2 9, 3 1 0, S_0x102dc53d0;
+v0x10133c660_0 .var "a", 0 0;
+v0x101341c80_0 .var "b", 0 0;
+v0x101341d20_0 .net "carry", 0 0, L_0x101341f50;  1 drivers
+v0x101341dc0_0 .net "sum", 0 0, L_0x101341e60;  1 drivers
+S_0x10133d6e0 .scope module, "dut" "HalfAdd" 2 10, 3 1 0, S_0x10133d560;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "a";
     .port_info 1 /INPUT 1 "b";
-    .port_info 2 /OUTPUT 2 "out";
-v0x102dc45f0_0 .net *"_ivl_0", 1 0, L_0x102dca4f0;  1 drivers
-L_0x7490c54010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-v0x102dc4690_0 .net *"_ivl_3", 0 0, L_0x7490c54010;  1 drivers
-v0x102dc9ff0_0 .net *"_ivl_4", 1 0, L_0x102dca590;  1 drivers
-L_0x7490c54058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-v0x102dca090_0 .net *"_ivl_7", 0 0, L_0x7490c54058;  1 drivers
-v0x102dca130_0 .net "a", 0 0, v0x102dca310_0;  1 drivers
-v0x102dca1d0_0 .net "b", 0 0, v0x102dca3b0_0;  1 drivers
-v0x102dca270_0 .net "out", 1 0, L_0x102dca670;  alias, 1 drivers
-L_0x102dca4f0 .concat [ 1 1 0 0], v0x102dca310_0, L_0x7490c54010;
-L_0x102dca590 .concat [ 1 1 0 0], v0x102dca3b0_0, L_0x7490c54058;
-L_0x102dca670 .arith/sum 2, L_0x102dca4f0, L_0x102dca590;
-    .scope S_0x102dc53d0;
+    .port_info 2 /OUTPUT 1 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+L_0x101341e60 .functor XOR 1, v0x10133c660_0, v0x101341c80_0, C4<0>, C4<0>;
+L_0x101341f50 .functor AND 1, v0x10133c660_0, v0x101341c80_0, C4<1>, C4<1>;
+v0x10133c3e0_0 .net "a", 0 0, v0x10133c660_0;  1 drivers
+v0x10133c480_0 .net "b", 0 0, v0x101341c80_0;  1 drivers
+v0x10133c520_0 .net "carry", 0 0, L_0x101341f50;  alias, 1 drivers
+v0x10133c5c0_0 .net "sum", 0 0, L_0x101341e60;  alias, 1 drivers
+    .scope S_0x10133d560;
 T_0 ;
-    %vpi_call 2 16 "$dumpfile", "dump.vcd" {0 0 0};
-    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x102dc53d0 {0 0 0};
+    %vpi_call 2 18 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x10133d560 {0 0 0};
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x102dca310_0, 0, 1;
+    %store/vec4 v0x10133c660_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x102dca3b0_0, 0, 1;
+    %store/vec4 v0x101341c80_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x102dca310_0, 0, 1;
+    %store/vec4 v0x10133c660_0, 0, 1;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x102dca3b0_0, 0, 1;
+    %store/vec4 v0x101341c80_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0x102dca310_0, 0, 1;
+    %store/vec4 v0x10133c660_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x102dca3b0_0, 0, 1;
+    %store/vec4 v0x101341c80_0, 0, 1;
     %delay 10000, 0;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x102dca310_0, 0, 1;
+    %store/vec4 v0x10133c660_0, 0, 1;
     %pushi/vec4 1, 0, 1;
-    %store/vec4 v0x102dca3b0_0, 0, 1;
+    %store/vec4 v0x101341c80_0, 0, 1;
     %delay 10000, 0;
-    %vpi_call 2 27 "$finish" {0 0 0};
+    %vpi_call 2 29 "$finish" {0 0 0};
     %end;
     .thread T_0;
 # The file index is used to find the file name in the following table.

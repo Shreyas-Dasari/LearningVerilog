@@ -1,8 +1,11 @@
 module HalfAdd( 
     input a, 
     input b, 
-    output [1:0] out );
+    output sum, 
+    output carry
+);
     
-    assign out = a + b;
+    assign sum = a ^ b;
+    assign carry = a & b;
 
 endmodule
